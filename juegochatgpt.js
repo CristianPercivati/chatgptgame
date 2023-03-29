@@ -87,8 +87,17 @@ function jugarRonda(personajes, enemigo, elementosSagrados) {
 
   // Cada personaje puede usar una habilidad especial
   for (let i = 0; i < personajesOrdenados.length; i++) {
-    const habilidadElegida = personajesOrdenados[i].habilidades[Math.floor(Math.random() * personajesOrdenados[i].habilidades.length)];
-    usarHabilidad(personajesOrdenados[i], enemigo, habilidadElegida);
+    const habilidades = personajesOrdenados[i].habilidades;
+    const habilidadesList = habilidades.map((habilidad, index) => `${index + 1}. ${habilidad}`);
+    let habilidadSeleccionadaIndex = -1;
+
+    while (habilidadSeleccionadaIndex < 1 || habilidadSeleccionadaIndex > habilidades.length) {
+      habilidadSeleccionadaIndex = prompt(`Elige la habilidad a utilizar para ${personajesOrdenados[i].nombre}:\n${habilidadesList.join("\n")}`);
+      habilidadSeleccionadaIndex = parseInt(habilidadSeleccionadaIndex);
+    }
+
+    const habilidadSeleccionada = habilidades[habilidadSeleccionadaIndex - 1];
+    usarHabilidad(personajesOrdenados[i], enemigo, habilidadSeleccionada);
   }
 
   // Cada personaje puede recolectar un elemento sagrado
@@ -102,6 +111,7 @@ function jugarRonda(personajes, enemigo, elementosSagrados) {
   for (let i = 0; i < personajes.length; i++) {
     console.log(`❤️ ${personajes[i].emoji} ${personajes[i].nombre}: ${personajes[i].vida} puntos de vida, equipo: ${personajes[i].equipo.join(', ')}`);
   }
+
   // Comprobar si el enemigo ha sido derrotado
   if (enemigo.vida <= 0) {
     console.log(`¡${enemigo.emoji} ${enemigo.nombre} ha sido derrotado!`);
