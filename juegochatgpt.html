@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,17 @@
     <title>Document</title>
 
 </head>
+
 <body>
+    <div id="resultados"></div>
     <script src="./juegochatgpt.js"></script>
+    <script>
+        const resultadosDiv = document.getElementById("resultados");
+
+        console.log = function (message) {
+            resultadosDiv.innerHTML += "<p>" + message + "</p>";
+        }
+    </script>
 </body>
+
 </html>
