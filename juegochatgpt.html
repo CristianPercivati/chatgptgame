@@ -4,10 +4,146 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Chat GPT - AI Generated Role Game</title>
 
 </head>
 <body>
-    <script src="./juegochatgpt.js"></script>
+    <main class="container mt-5">
+    <h1>Chat GPT - AI Generated Role Game</h1>
+
+
+    <div class="row mt-5" id="char-selection">
+        <div class="card col text-center justify-content-md-center" style="width: 18rem;">
+            <img src="./img/char1.png" style="max-width: 25%; margin-left: auto; margin-right: auto; mt-5" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="player1-title">Personaje 1</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <form action="">
+                <label class="form-label" for="player1-name">Name:</label>
+                <input class="form-control" type="text" id="player1-name">
+                <label class="form-label" for="player1-item">Initial item:</label>
+                <select class="form-control" id="player1-item">
+                    <option>Espada de fuego</option>
+                    <option>Vara de rayos</option>
+                    <option>Arco de viento</option>
+                  </select>
+                <label class="form-label" for="player1-attack">Attack:</label>
+                <select class="form-control" id="player1-attack">
+                    <option>Ataque rápido</option>
+                    <option>Ataque fuerte</option>
+                    <option>Ataque cargado</option>
+                  </select>
+                  <label class="form-label" for="player1-spell">Spells:</label>
+                  <select class="form-control" id="player1-spell">
+                      <option>Conjuro de fuego</option>
+                      <option>Conjuro de hielo</option>
+                      <option>Conjuro de viento</option>
+                  </select>
+                  <label class="form-label" for="player1-shield">Shields:</label>
+                  <select class="form-control" id="player1-shield">
+                      <option>Escudo de fuego</option>
+                      <option>Escudo de hielo</option>
+                      <option>Escudo de tierra</option>
+                  </select>
+  
+            </form>
+            </div>
+          </div>
+          <div class="card col text-center justify-content-md-center" style="width: 18rem;">
+            <img src="./img/char2.png" style="max-width: 25%; margin-left: auto; margin-right: auto; mt-5" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="player2-title">Personaje 2</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <form action="">
+                <label class="form-label" for="player2-name">Name:</label>
+                <input class="form-control" type="text" id="player2-name">
+                <label class="form-label" for="player2-item">Initial item:</label>
+                <select class="form-control" id="player2-item">
+                    <option>Espada de fuego</option>
+                    <option>Vara de rayos</option>
+                    <option>Arco de viento</option>
+                  </select>
+                <label class="form-label" for="player2-attack">Attack:</label>
+                <select class="form-control" id="player2-attack">
+                    <option>Ataque rápido</option>
+                    <option>Ataque fuerte</option>
+                    <option>Ataque cargado</option>
+                  </select>
+                  <label class="form-label" for="player2-spell">Spells:</label>
+                  <select class="form-control" id="player2-spell">
+                      <option>Conjuro de fuego</option>
+                      <option>Conjuro de hielo</option>
+                      <option>Conjuro de viento</option>
+                  </select>
+                  <label class="form-label" for="player2-shield">Shields:</label>
+                  <select class="form-control" id="player2-shield">
+                      <option>Escudo de fuego</option>
+                      <option>Escudo de hielo</option>
+                      <option>Escudo de tierra</option>
+                  </select>
+  
+            </form>
+            </div>
+          </div>
+          <div class="card col text-center justify-content-md-center" style="width: 18rem;">
+            <img src="./img/char3.png" style="max-width: 25%; margin-left: auto; margin-right: auto; mt-5" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="player3-title">Personaje 3</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <form action="">
+                <label class="form-label" for="player3-name">Name:</label>
+                <input class="form-control" type="text" id="player3-name">
+                <label class="form-label" for="player3-item">Initial item:</label>
+                <select class="form-control" id="player3-item">
+                    <option>Espada de fuego</option>
+                    <option>Vara de rayos</option>
+                    <option>Arco de viento</option>
+                  </select>
+                <label class="form-label" for="player3-attack">Attack:</label>
+                <select class="form-control" id="player3-attack">
+                    <option>Ataque rápido</option>
+                    <option>Ataque fuerte</option>
+                    <option>Ataque cargado</option>
+                  </select>
+                  <label class="form-label" for="player3-spell">Spells:</label>
+                  <select class="form-control" id="player3-spell">
+                      <option>Conjuro de fuego</option>
+                      <option>Conjuro de hielo</option>
+                      <option>Conjuro de viento</option>
+                  </select>
+                  <label class="form-label" for="player3-shield">Shields:</label>
+                  <select class="form-control" id="player3-shield">
+                      <option>Escudo de fuego</option>
+                      <option>Escudo de hielo</option>
+                      <option>Escudo de tierra</option>
+                  </select>
+  
+            </form>
+            </div>
+          </div>
+    </div>
+    <div class="row mt-5 justify-content-md-center" id="start-game-container">
+        <button class="btn btn-primary" id="button-start">Start</button>
+    </div>
+    <div class="col mt-5" id="role-narration-container">
+    </div>
+    </main>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
+
+<script src="./juegochatgpt.js"></script>
+
 </html>
