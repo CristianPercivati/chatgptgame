@@ -4,6 +4,8 @@ const dragonDeFuego = [{
   vida: 200
 }];
 
+let personajesDerrotados = false;
+
 // Función para lanzar un dado de 6 caras
 function lanzarDado() {
   return Math.floor(Math.random() * 6) + 1;
@@ -125,23 +127,23 @@ const ataques = [
       const enemigos = [
       {
       nombre: 'Goblin',
-      vida: 50,
+      vida: 600,
       danio: 10
       },
       {
       nombre: 'Esqueleto',
-      vida: 75,
-      danio: 15
+      vida: 550,
+      danio: 30
       },
       {
       nombre: 'Ogro',
-      vida: 100,
-      danio: 20
+      vida: 900,
+      danio: 40
       },
       {
       nombre: 'Demonio',
-      vida: 150,
-      danio: 30
+      vida: 1000,
+      danio: 60
       }
       ];
       
@@ -300,11 +302,13 @@ if (enemigo.vida <= 0) {
     }
     
     // Comprobar si todos los personajes han sido derrotados
-    let personajesDerrotados = true;
     for (let i = 0; i < personajes.length; i++) {
     if (personajes[i].vida > 0) {
     personajesDerrotados = false;
     break;
+    }
+    else{
+    personajesDerrotados = true
     }
     }
     
@@ -323,7 +327,7 @@ if (enemigo.vida <= 0) {
     createNewLine("h2",`Ronda ${ronda}:`, 'text-center my-3');
     const enemigo = enemigos[randomNumber(enemigos.length)];
     createNewLine("h3",`¡Un ${enemigo.nombre} salvaje apareció!`, 'text-center');
-    while (!jugarRonda(personajes, enemigo, elementosSagrados)) {
+    while (!jugarRonda(personajes, enemigo, elementosSagrados) && personajesDerrotados==false) {
         // Mientras nadie sea derrotado, seguir jugando rondas
       }
       
@@ -339,7 +343,7 @@ if (enemigo.vida <= 0) {
       }
       
       // Si todos los personajes han sido derrotados, el juego termina
-      if (personajes.length === 0) {
+      if (personajesDerrotados === true) {
         createNewLine("h2",`¡Oh no, todos tus personajes han sido derrotados! Mejor suerte la próxima vez.`, 'text-center my-3');
         return;
       }
